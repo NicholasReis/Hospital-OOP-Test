@@ -7,7 +7,7 @@ public class Doctor{
     protected int age;
     protected ArrayList<String> specialization = new ArrayList<String>();
     protected String office;
-    protected ArrayList<String> patients = new ArrayList<String>();
+    protected ArrayList<Integer> patients = new ArrayList<Integer>();
     /*
      * Future additions may include schedule/availability, salary, etc
      * This is fine for now though.
@@ -31,7 +31,7 @@ public class Doctor{
         return specialization;
     }
 
-    public ArrayList<String> getPatients(){
+    public ArrayList<Integer> getPatients(){
         return patients;
     }
 
@@ -39,7 +39,7 @@ public class Doctor{
         specialization.add(discipline);
     }
 
-    public void addPatient(String patientName){
-        patients.add(patientName);
+    public void addPatient(int patientID){
+        patients.add(patientID);
     }
 }
