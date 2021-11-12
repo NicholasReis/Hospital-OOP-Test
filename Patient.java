@@ -2,32 +2,31 @@ import java.util.ArrayList;
 
 public class Patient{
     //IDs rather than doctor name/room name for physical security reasons
+    private int patientID;
     private int doctorID;
-    private String roomCode;
+    private String roomID;
     protected String firstName;
     protected String lastName;
     protected char sex;
     protected char gender;
     protected int age;
-    protected ArrayList<Symptom> symptoms;
-    public Patient(int doctorID, String roomCode, String firstName,
-    String lastName, char sex, char gender, int age, ArrayList<Symptom> symptoms){
-        this.doctorID = doctorID;
-        this.roomCode = roomCode;
+    protected ArrayList<String> symptoms = new ArrayList<String>();
+    protected String currentDiagnosis;
+
+    public Patient(int patientID, String firstName, String lastName, char sex,
+    char gender, int age){
         this.firstName = firstName;
         this.lastName = lastName;
+        this.sex = sex;
+        this.gender = gender;
         this.age = age;
-        this.symptoms = symptoms;
     }
 
-    public int getPatientDoctorID(){
-        return doctorID;
+    //Getters    
+    public int getPatientID(){
+        return patientID;
     }
-
-    public String getPatientRoomCode(){
-        return roomCode;
-    }
-
+    
     public String getPatientName(){
         //Prioritizes preferred gender, should one not be provided defaults to sex
         if(Character.toLowerCase(gender) == 'm'){
@@ -51,7 +50,36 @@ public class Patient{
         return age;
     }
     
-    public ArrayList<Symptom> getPatientSymptoms(){
+    public int getPatientDoctorID(){
+        return doctorID;
+    }
+
+    public String getPatientRoomID(){
+        return roomID;
+    }
+
+    public ArrayList<String> getPatientSymptoms(){
         return symptoms;
+    }
+    
+    public String getPatientDiagnosis(){
+        return currentDiagnosis;
+    }
+
+    //Setters
+    public void setDoctorID(int id){
+        doctorID = id;
+    }
+
+    public void setRoomID(String id){
+        roomID = id;
+    }
+
+    public void setSymptom(String symptom){
+        symptoms.add(symptom);
+    }
+
+    public void setDiagnosis(String diagnosis){
+        currentDiagnosis = diagnosis;
     }
 }
