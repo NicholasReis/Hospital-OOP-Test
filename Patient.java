@@ -1,30 +1,16 @@
 import java.util.ArrayList;
 
-public class Patient{
+public class Patient extends Person{
     //IDs rather than doctor name/room name for physical security reasons
-    private int patientID;
     private int doctorID;
     private String roomID;
-    protected String firstName;
-    protected String lastName;
-    protected char sex;
-    protected char gender;
     protected int age;
     protected ArrayList<String> symptoms = new ArrayList<String>();
     protected String currentDiagnosis;
 
-    public Patient(int patientID, String firstName, String lastName, char sex,
+    public Patient(int id, String firstName, String lastName, char sex,
     char gender, int age){
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.sex = sex;
-        this.gender = gender;
-        this.age = age;
-    }
-
-    //Getters    
-    public int getPatientID(){
-        return patientID;
+        super(id, firstName, lastName, age, sex, gender);
     }
     
     public String getPatientName(){
@@ -46,14 +32,6 @@ public class Patient{
         }
     }
     
-    public int getPatientAge(){
-        return age;
-    }
-    
-    public int getPatientDoctorID(){
-        return doctorID;
-    }
-
     public String getPatientRoomID(){
         return roomID;
     }

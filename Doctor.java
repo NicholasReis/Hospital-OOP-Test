@@ -1,10 +1,7 @@
 import java.util.ArrayList;
 
-public class Doctor{
-    protected int id;
-    protected String firstName;
-    protected String lastName;
-    protected int age;
+public class Doctor extends Person{
+    
     protected ArrayList<String> specialization = new ArrayList<String>();
     protected String office;
     protected ArrayList<Integer> patients = new ArrayList<Integer>();
@@ -13,12 +10,9 @@ public class Doctor{
      * This is fine for now though.
      */
 
-    public Doctor(int id, String firstName, String lastName, int age,
-    String office){
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
+    public Doctor(int id, String firstName, String lastName, int age, char sex, char gender, String office){
+        super(id, firstName, lastName, age, sex, gender);
+        
         this.specialization = specialization;
         this.office = office;
     }
