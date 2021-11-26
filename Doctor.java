@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Doctor extends Person{
     
-    protected ArrayList<String> specialization = new ArrayList<String>();
+    protected ArrayList<Specialization> specialization = new ArrayList<Specialization>();
     protected String office;
     protected ArrayList<Integer> patients = new ArrayList<Integer>();
     /*
@@ -21,7 +21,7 @@ public class Doctor extends Person{
         return "Dr. " + lastName;
     }
 
-    public ArrayList<String> getSpecialization(){
+    public ArrayList<Specialization> getSpecialization(){
         return specialization;
     }
 
@@ -29,7 +29,7 @@ public class Doctor extends Person{
         return patients;
     }
 
-    public void addSpecialization(String discipline){
+    public void addSpecialization(Specialization discipline){
         specialization.add(discipline);
     }
 

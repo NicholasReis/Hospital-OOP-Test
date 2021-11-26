@@ -5,7 +5,7 @@ public class Patient extends Person{
     private int doctorID;
     private String roomID;
     protected int age;
-    protected ArrayList<String> symptoms = new ArrayList<String>();
+    protected ArrayList<Symptom> symptoms = new ArrayList<Symptom>();
     protected String currentDiagnosis;
 
     public Patient(int id, String firstName, String lastName, char sex,
@@ -36,7 +36,7 @@ public class Patient extends Person{
         return roomID;
     }
 
-    public ArrayList<String> getPatientSymptoms(){
+    public ArrayList<Symptom> getPatientSymptoms(){
         return symptoms;
     }
     
@@ -53,7 +53,7 @@ public class Patient extends Person{
         roomID = id;
     }
 
-    public void setSymptom(String symptom){
+    public void setSymptom(Symptom symptom){
         symptoms.add(symptom);
     }
 
