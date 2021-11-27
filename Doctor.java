@@ -13,7 +13,6 @@ public class Doctor extends Person{
     public Doctor(int id, String firstName, String lastName, int age, char sex, char gender, String office){
         super(id, firstName, lastName, age, sex, gender);
         
-        this.specialization = specialization;
         this.office = office;
     }
 

@@ -2,20 +2,16 @@ import java.util.HashMap;
 import java.util.ArrayList;
 
 public class Symptom{
-    protected HashMap<String, String> symptoms;
-    protected ArrayList<String> symptomsList;
+    protected String symptomName;
+    protected String symptomData;
     
-    public Symptom(){
-        FileParser fp = new FileParser("Symptoms");
-        symptoms = new HashMap<String, String>(fp.getHashMap());
-        symptomsList = new ArrayList<String>(fp.getMapKeys());
-    }
-
-    public HashMap<String, String> getSymptomsMap(){
-        return symptoms;
+    public Symptom(String symptomName){
+        SymptomMap sm = new SymptomMap();
+        this.symptomName = symptomName;
+        this.symptomData = sm.getSymptomData(symptomName);
     }
     
-    public ArrayList<String> getSymptomTypes(){
-        return symptomsList;
+    public String getSymptomData(){
+        return symptomData;
     }
 }

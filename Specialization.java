@@ -2,20 +2,16 @@ import java.util.HashMap;
 import java.util.ArrayList;
 
 public class Specialization{
-    protected HashMap<String, String> specializations;
-    protected ArrayList<String> specializationsList;
+    protected String specializationName;
+    protected String specializationData;
     
-    public Specialization(){
-        FileParser fp = new FileParser("Specializations");
-        specializations = new HashMap<String, String>(fp.getHashMap());
-        specializationsList = new ArrayList<String>(fp.getMapKeys());
+    public Specialization(String specializationName){
+        SpecializationMap sm = new SpecializationMap();
+        specializationName = specializationName;
+        specializationData = sm.getSpecializationData(specializationName);
     }
     
-    public HashMap<String, String> getSpecializationMap(){
-        return specializations;
-    }
-    
-    public ArrayList<String> getSpecializationTypes(){
-        return specializationsList;
+    public String getSpecializationData(){
+        return specializationData;
     }
 }

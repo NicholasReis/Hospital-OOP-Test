@@ -9,8 +9,8 @@ public class FileParser{
     protected String data;
     public FileParser(String fileName){
         try{
-            File specializationsFile = new File("res/"+fileName+".txt");
-            Scanner scan = new Scanner(specializationsFile);
+            File file = new File("res/"+fileName+".txt");
+            Scanner scan = new Scanner(file);
             while(scan.hasNextLine()){
                 String line = scan.nextLine();
                 if(line.equals("")){
@@ -22,6 +22,10 @@ public class FileParser{
         }catch(Exception e){
             e.printStackTrace();
         }
+    }
+    
+    public String getData(String dataLabel){
+        return dataHashMap.get(dataLabel);
     }
     
     //Returns the map

@@ -53,8 +53,8 @@ public class Patient extends Person{
         roomID = id;
     }
 
-    public void setSymptom(Symptom symptom){
-        symptoms.add(symptom);
+    public void setSymptom(String symptomName){
+        symptoms.add(new Symptom(symptomName));
     }
 
     public void setDiagnosis(String diagnosis){
